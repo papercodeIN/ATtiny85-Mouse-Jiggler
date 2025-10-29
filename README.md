@@ -122,7 +122,3 @@ Upload the sketch to your Digispark ATTiny85, plug it into your PC or laptop, an
 ## ✅ Conclusion
 
 With just a few lines of code and a Digispark ATTiny85, you can build a reliable USB Mouse Jiggler that keeps your system active — hands-free. It’s compact, affordable, and incredibly useful for anyone needing uninterrupted uptime.
-
----
-
-Let me know if you'd like a visual schematic, animated demo, or a printable quick-start guide for this project!
