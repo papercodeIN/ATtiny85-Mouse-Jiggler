@@ -1,5 +1,13 @@
 # 🖱️ ATtiny85 USB Mouse Jiggler
 
+[![YouTube](https://img.shields.io/badge/YouTube-Fusion_Automate-red?logo=youtube)](https://www.youtube.com/@Fusion_Automate)
+[![Instagram](https://img.shields.io/badge/Instagram-fusion__automate-E4405F?logo=instagram&logoColor=white)](https://www.instagram.com/fusion_automate)
+[![X](https://img.shields.io/badge/X-fusion__automate-000?logo=x&logoColor=white)](https://x.com/fusion_automate)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Fusion_Automate-0077B5?logo=linkedin&logoColor=white)](https://in.linkedin.com/company/fusion-automate)
+[![GitHub](https://img.shields.io/badge/GitHub-papercodeIN-181717?logo=github&logoColor=white)](https://github.com/papercodeIN)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-Group-25D366?logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/GgZVMsE9kzpAbX6Kz25kKy)
+[![Store](https://img.shields.io/badge/Store-Fusion_Automate-blue?logo=shopify&logoColor=white)](https://shop.fusionautomate.in/)
+
 Turn your **Digispark ATTiny85** into a compact, plug-and-play USB Mouse Jiggler using the **DigiMouse** library. This tiny tool keeps your computer awake by simulating subtle mouse movements — perfect for long downloads, presentations, or unattended tasks.
 
 ---
@@ -122,24 +130,3 @@ Upload the sketch to your Digispark ATTiny85, plug it into your PC or laptop, an
 ## ✅ Conclusion
 
 With just a few lines of code and a Digispark ATTiny85, you can build a reliable USB Mouse Jiggler that keeps your system active — hands-free. It's compact, affordable, and incredibly useful for anyone needing uninterrupted uptime.
-
----
-
-## 🛒 Buy Ready-Made
-
-Get a pre-built, plug-and-play ATtiny85 Mouse Jiggler from our store:
-
-- [Fusion Automate Store](https://shop.fusionautomate.in/)
-- [Tindie Store](https://www.tindie.com/products/42020/)
-
----
-
-## 🌐 Connect With Us
-
-[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@Fusion_Automate)
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/fusion_automate)
-[![X](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/fusion_automate)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://in.linkedin.com/company/fusion-automate)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/papercodeIN)
-[![WhatsApp Group](https://img.shields.io/badge/WhatsApp_Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/GgZVMsE9kzpAbX6Kz25kKy)
-[![WhatsApp Channel](https://img.shields.io/badge/WhatsApp_Channel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://whatsapp.com/channel/0029Vb30tuvIyPtJPu62Ux0I)
