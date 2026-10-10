@@ -41,14 +41,14 @@ These movements are:
 #include <DigiMouse.h>
 
 // ===== USER SETTINGS =====
-const uint16_t moveInterval = 2000;  // time between movements (ms)
-const uint8_t moveDistance = 60;     // movement distance in pixels
-const uint16_t smoothDelay = 10;     // small delay between micro movements
+const uint16_t moveInterval = 2000;
+const int8_t moveDistance = 60;
+const uint16_t smoothDelay = 10;
+const int steps = 20;
 // ==========================
 
 void setup() {
   DigiMouse.begin();
-  // Small startup delay gives time for reprogramming if needed
   for (int i = 0; i < 50; i++) {
     DigiMouse.update();
     delay(10);
@@ -56,27 +56,27 @@ void setup() {
 }
 
 void loop() {
-  // Move in a small square smoothly
-  moveSmooth(moveDistance, 0);   // Right
-  moveSmooth(0, moveDistance);   // Down
-  moveSmooth(-moveDistance, 0);  // Left
-  moveSmooth(0, -moveDistance);  // Up
+  moveSmooth(moveDistance, 0);
+  moveSmooth(0, moveDistance);
+  moveSmooth(-moveDistance, 0);
+  moveSmooth(0, -moveDistance);
 
-  DigiMouse.delay(moveInterval); // Wait before next move
+  DigiMouse.delay(moveInterval);
 }
 
-// Smooth mouse movement function
 void moveSmooth(int8_t xDist, int8_t yDist) {
-  int steps = 20; // number of small steps for smoothness
   int8_t stepX = xDist / steps;
   int8_t stepY = yDist / steps;
+  int8_t remainX = xDist - (stepX * steps);
+  int8_t remainY = yDist - (stepY * steps);
 
   for (int i = 0; i < steps; i++) {
-    DigiMouse.move(stepX, stepY, 0);
+    int8_t dx = stepX + ((i == steps - 1) ? remainX : 0);
+    int8_t dy = stepY + ((i == steps - 1) ? remainY : 0);
+    DigiMouse.move(dx, dy, 0);
     DigiMouse.delay(smoothDelay);
   }
 
-  // Small update to keep connection alive
   DigiMouse.update();
 }
 ```
@@ -121,4 +121,25 @@ Upload the sketch to your Digispark ATTiny85, plug it into your PC or laptop, an
 
 ## ✅ Conclusion
 
-With just a few lines of code and a Digispark ATTiny85, you can build a reliable USB Mouse Jiggler that keeps your system active — hands-free. It’s compact, affordable, and incredibly useful for anyone needing uninterrupted uptime.
+With just a few lines of code and a Digispark ATTiny85, you can build a reliable USB Mouse Jiggler that keeps your system active — hands-free. It's compact, affordable, and incredibly useful for anyone needing uninterrupted uptime.
+
+---
+
+## 🛒 Buy Ready-Made
+
+Get a pre-built, plug-and-play ATtiny85 Mouse Jiggler from our store:
+
+- [Fusion Automate Store](https://shop.fusionautomate.in/)
+- [Tindie Store](https://www.tindie.com/products/42020/)
+
+---
+
+## 🌐 Connect With Us
+
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@Fusion_Automate)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/fusion_automate)
+[![X](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/fusion_automate)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://in.linkedin.com/company/fusion-automate)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/papercodeIN)
+[![WhatsApp Group](https://img.shields.io/badge/WhatsApp_Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/GgZVMsE9kzpAbX6Kz25kKy)
+[![WhatsApp Channel](https://img.shields.io/badge/WhatsApp_Channel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://whatsapp.com/channel/0029Vb30tuvIyPtJPu62Ux0I)

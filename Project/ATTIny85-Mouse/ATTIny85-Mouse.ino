@@ -1,14 +1,14 @@
 #include <DigiMouse.h>
 
 // ===== USER SETTINGS =====
-const uint16_t moveInterval = 2000;  // time between movements (ms)
-const uint8_t moveDistance = 60;     // movement distance in pixels
-const uint16_t smoothDelay = 10;     // small delay between micro movements
+const uint16_t moveInterval = 2000;
+const int8_t moveDistance = 60;
+const uint16_t smoothDelay = 10;
+const int steps = 20;
 // ==========================
 
 void setup() {
   DigiMouse.begin();
-  // Small startup delay gives time for reprogramming if needed
   for (int i = 0; i < 50; i++) {
     DigiMouse.update();
     delay(10);
@@ -16,26 +16,26 @@ void setup() {
 }
 
 void loop() {
-  // Move in a small square smoothly
-  moveSmooth(moveDistance, 0);   // Right
-  moveSmooth(0, moveDistance);   // Down
-  moveSmooth(-moveDistance, 0);  // Left
-  moveSmooth(0, -moveDistance);  // Up
+  moveSmooth(moveDistance, 0);
+  moveSmooth(0, moveDistance);
+  moveSmooth(-moveDistance, 0);
+  moveSmooth(0, -moveDistance);
 
-  DigiMouse.delay(moveInterval); // Wait before next move
+  DigiMouse.delay(moveInterval);
 }
 
-// Smooth mouse movement function
 void moveSmooth(int8_t xDist, int8_t yDist) {
-  int steps = 20; // number of small steps for smoothness
   int8_t stepX = xDist / steps;
   int8_t stepY = yDist / steps;
+  int8_t remainX = xDist - (stepX * steps);
+  int8_t remainY = yDist - (stepY * steps);
 
   for (int i = 0; i < steps; i++) {
-    DigiMouse.move(stepX, stepY, 0);
+    int8_t dx = stepX + ((i == steps - 1) ? remainX : 0);
+    int8_t dy = stepY + ((i == steps - 1) ? remainY : 0);
+    DigiMouse.move(dx, dy, 0);
     DigiMouse.delay(smoothDelay);
   }
 
-  // Small update to keep connection alive
   DigiMouse.update();
 }
